@@ -32,9 +32,9 @@ while True:
 
         # Perspective transformation points
 
-        tl = (80, 280) 
+        tl = (80, 100) 
         bl = (4, 373) 
-        tr = (590, 280) 
+        tr = (590, 100) 
         br = (634, 373)
         cv2.circle(frame, tl, 5, (0,0,255), -1)
         cv2.circle(frame, bl, 5, (0,0,255), -1)
