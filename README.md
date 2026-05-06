@@ -25,9 +25,9 @@ The system performs lane-keeping without external sensors such as LiDAR, ultraso
 
 ## Vision and Preprocessing
 
-To achieve s<img width="759" height="530" alt="6037193665950106862" src="https://github.com/user-attachments/assets/407f2869-cd6c-4633-82b1-cf15f2f7a244" />
+To achieve stable performance at 30 FPS:
 
-table performance at 30 FPS:
+<img width="759" height="530" alt="6037193665950106862" src="https://github.com/user-attachments/assets/407f2869-cd6c-4633-82b1-cf15f2f7a244" />
 
 * Region of Interest (ROI): Hardware cropping focuses only on the lower road area
 * Brightness correction: Gamma correction (1.5) reduces glare and improves edge detection stability
@@ -71,5 +71,5 @@ The Raspberry Pi sends serial commands to Arduino:
 * pid_control(error): computes steering correction
 * reduce_local_brightness: applies gamma correction and lighting normalization
 * send_command: sends serial instructions to Arduino
-* average_line: merges multiple detected line segments into stable lane estimates<img width="759" height="530" alt="6037193665950106862" src="https://github.com/user-attachments/assets/95e47468-135c-40f3-a03d-5137d1d1f20c" />
+* average_line: merges multiple detected line segments into stable lane estimates
 
