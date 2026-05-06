@@ -1,7 +1,5 @@
 # Ackermann Steering Line Recognition System
 
-Autonomous Vehicle Navigation with OpenCV & Raspberry Pi
-
 ## Overview
 
 This project implements a real-world autonomous driving simulation on a 30 × 20 cm robot. A Raspberry Pi with a single camera processes visual input from a printed road banner and controls steering using Ackermann geometry.
@@ -27,9 +25,11 @@ The system performs lane-keeping without external sensors such as LiDAR, ultraso
 
 ## Vision and Preprocessing
 
-To achieve stable performance at 30 FPS:
+To achieve s<img width="759" height="530" alt="6037193665950106862" src="https://github.com/user-attachments/assets/407f2869-cd6c-4633-82b1-cf15f2f7a244" />
 
-* Region of Interest (ROI): Hardware cropping focuses only on the lower road area (~2800 × 1000 pixels)
+table performance at 30 FPS:
+
+* Region of Interest (ROI): Hardware cropping focuses only on the lower road area
 * Brightness correction: Gamma correction (1.5) reduces glare and improves edge detection stability
 * Masking: A polygonal mask isolates the road and removes irrelevant regions
 
@@ -49,7 +49,7 @@ To improve robustness:
 
 ## Control System
 
-Steering is controlled using a PID controller (Kp = 0.7, Ki = 0.0, Kd = 0.0).
+Steering is controlled using a PID controller.
 
 * Lane center is computed as the midpoint between left and right lanes
 * Error is the offset between lane center and image center
@@ -71,8 +71,5 @@ The Raspberry Pi sends serial commands to Arduino:
 * pid_control(error): computes steering correction
 * reduce_local_brightness: applies gamma correction and lighting normalization
 * send_command: sends serial instructions to Arduino
-* average_line: merges multiple detected line segments into stable lane estimates
+* average_line: merges multiple detected line segments into stable lane estimates<img width="759" height="530" alt="6037193665950106862" src="https://github.com/user-attachments/assets/95e47468-135c-40f3-a03d-5137d1d1f20c" />
 
-## Notes
-
-The system is designed for lightweight embedded processing and stable real-time navigation using only a single camera input.
