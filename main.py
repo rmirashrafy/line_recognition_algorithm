@@ -9,7 +9,7 @@ raw_size = (3200, 2400)
 crop_params = (120,2400, 2800, 1000)  # (x, y, w, h)
 output_size = (800, 600)
 
-
+#main file including PID control
 Kp = 0.4
 Ki = 0.0
 Kd = 0.0
