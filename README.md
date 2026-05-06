@@ -27,8 +27,6 @@ The system performs lane-keeping without external sensors such as LiDAR, ultraso
 
 To achieve stable performance at 30 FPS:
 
-<img width="759" height="530" alt="6037193665950106862" src="https://github.com/user-attachments/assets/407f2869-cd6c-4633-82b1-cf15f2f7a244" />
-
 * Region of Interest (ROI): Hardware cropping focuses only on the lower road area
 * Brightness correction: Gamma correction (1.5) reduces glare and improves edge detection stability
 * Masking: A polygonal mask isolates the road and removes irrelevant regions
@@ -46,6 +44,10 @@ To improve robustness:
 
 * Previous detected lines are stored
 * If detection fails, last valid lines are reused to maintain direction
+
+<img width="759" height="530" alt="6037193665950106862" src="https://github.com/user-attachments/assets/407f2869-cd6c-4633-82b1-cf15f2f7a244" />
+
+The blue and red lines represent the most probable left and right lane boundaries detected from the set of lines, and the green middle point is the target position that the steering system tries to align with.
 
 ## Control System
 
