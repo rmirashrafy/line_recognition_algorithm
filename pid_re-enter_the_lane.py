@@ -10,6 +10,8 @@ crop_params = (120,2400, 2800, 1000)  # (x, y, w, h)
 output_size = (800, 600)
 '''
 
+# If only the right line is detected, the car is programmed to default to a sharp left turn (`servo_angle = 30`) to re-enter the lane. 
+
 raw_size = (3200, 2400)
 crop_params = (120,2400, 2800, 1000)  # (x, y, w, h)
 output_size = (800, 600)
@@ -20,13 +22,12 @@ Kd = 0.0
 prev_error = 0
 integral = 0
 
-motor_speed = 100    # مقدار سرعت موتور (0 تا 255)
+motor_speed = 100    
 move_command = 'F' 
 
-# اتصال به آردوینو
 try:
     arduino = serial.Serial('/dev/ttyUSB0', 9600, timeout=1)
-    time.sleep(2)  # صبر برای راه‌اندازی کامل آردوینو
+    time.sleep(2)  
 except Exception as e:
     print(f"Error: Could not connect to Arduino: {e}")
     exit()
@@ -34,16 +35,15 @@ except Exception as e:
 
 def send_command(command):
     try:
-        command += '\n'  # اضافه کردن کاراکتر newline برای تکمیل دستور
+        command += '\n'
         arduino.write(command.encode())
         print(f"Sent: {command.strip()}")
     except Exception as e:
         print(f"Error: Failed to send command: {e}")
 
-    # ارسال دستور تنظیم سرعت موتور
 send_command(str(motor_speed))
 time.sleep(2)
-    # ارسال فرمان حرکت (مثلاً حرکت به جلو)
+    
 send_command(move_command)
 time.sleep(2)
 picam2 = Picamera2()
@@ -73,11 +73,11 @@ def find_white_mean_x(image):
     hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
     
     # Define yellow color range in HSV
-    #lower_white = np.array([0, 0, 50])   # حداقل مقدار برای خاکستری (روشن‌تر)
+    #lower_white = np.array([0, 0, 50])   
     #upper_white = np.array([255, 50, 200])
     
     # Define red color range in HSV
-    lower_red = np.array([0, 0, 200])   # حداقل مقدار برای خاکستری (روشن‌تر)
+    lower_red = np.array([0, 0, 200])   
     upper_red = np.array([180, 40, 255])
 
     
