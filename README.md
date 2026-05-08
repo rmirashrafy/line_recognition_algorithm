@@ -2,6 +2,8 @@
 
 ## Overview
 
+<img width="1189" height="336" alt="Screenshot from 2026-05-08 12-55-42" src="https://github.com/user-attachments/assets/0775cd50-d8e8-4aa5-b2c6-8af62ee64205" />
+
 This project implements a real-world autonomous driving simulation on a 30 × 20 cm robot. A Raspberry Pi with a single camera processes visual input from a printed road banner and controls steering using Ackermann geometry.
 
 The system performs lane-keeping without external sensors such as LiDAR, ultrasonic, or infrared. All processing and decision-making are done onboard in real time.
